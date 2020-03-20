@@ -1,0 +1,230 @@
+.campo
+{
+    margin: 20px;
+    color: #ffffff;
+}
+.select
+{
+    margin: 20px;
+    color: #ffffff;
+}
+.radio
+{
+    margin: 20px;
+    color: #ffffff;
+}
+.fashion
+{
+    font-size: 15px;
+    text-align: left;
+    padding: 2px;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: #ffffff;
+    border-color: #999999;
+    color: #000000;
+    box-shadow: 0px 0px 5px 0px rgba(163,161,163,.75);
+    text-shadow: 0px 0px 0px rgba(42,42,42,.70);
+    font-weight: normal;
+    font-style: none;
+    font-family: sans-serif; 
+}
+
+.fashionbutton
+{
+    box-shadow: rgb(190, 226, 249) 0px 1px 0px 0px inset;
+    background: linear-gradient(rgb(99, 184, 238) 5%, rgb(70, 140, 207) 100%) rgb(99, 184, 238);
+    border-radius: 6px;
+    border: 1px solid rgb(56, 102, 163);
+    margin: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(20, 57, 106);
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 17px;
+    text-decoration: none;
+    text-shadow: rgb(124, 172, 222) 0px 1px 0px;
+}
+.select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}    .select select {
+    font-family: 'Arial';
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 2px 5px;
+    outline: 0;
+    border: 1px outset #999999;
+    border-radius: 5px;
+    width: 204px;
+    height: 23px;
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0px 0px 5px 0px rgba(163,161,163,.75);
+    text-shadow: 0px 0px 0px rgba(42,42,42,.70);
+    font-weight: normal;
+    font-style: none;
+    font-family: sans-serif; 
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.select select::-ms-expand {
+    display: none;
+}
+.select select:hover,
+.select select:focus {
+    color: #000000;
+    background: #ffffff;
+}
+.select select:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+.select_arrow 
+{
+    position: relative;
+    top: 0px;
+    right: 24px;
+    width: 6px;
+    height: 6px;
+    width: 1px;
+    height: 1px;    
+    border: solid #333333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+    border-color: #222222;
+}
+.select select:disabled ~ .select_arrow {
+    border-top-color: #cccccc;
+}
+.control {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 20px;
+    color: #ffffff;
+}
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.control_indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border: 0px solid #000000;
+    border-radius: undefinedpx;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+    background: #000000;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: #0e6647d;
+}
+.control input:disabled ~ .control_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-radio .control_indicator {
+    border-radius: 50%;
+}
+
+.control-radio .control_indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    transition: background 250ms;
+}
+.control-radio input:disabled ~ .control_indicator:after {
+    background: #7b7b7b;
+}.control-radio .control_indicator::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #2aa1c0;
+    border-radius: 3rem;
+    opacity: 0.6;
+    z-index: 99999;
+    transform: scale(0);
+}
+@keyframes s-ripple {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.01;
+        transform: scale(1);
+    }
+}
+@keyframes s-ripple-dup {
+    0% {
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+.control-radio input + .control_indicator::before {
+    animation: s-ripple 250ms ease-out;
+}
+.control-radio input:checked + .control_indicator::before {
+    animation-name: s-ripple-dup;
+}
